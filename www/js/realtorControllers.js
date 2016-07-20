@@ -1,6 +1,6 @@
 var realtorControllers = angular.module('realtorControllers',[])
 
-.controller('ReiFaxCtrl', function($scope, $rootScope, $ionicSideMenuDelegate, $ionicModal, $ionicPlatform) {
+.controller('ReiFaxCtrl', function($scope, $rootScope, $ionicSideMenuDelegate, $ionicModal, $ionicPlatform, $ionicHistory) {
     console.log('reifaxCtrl');
     
     $scope.toggleLeft = function() {
@@ -53,13 +53,12 @@ var realtorControllers = angular.module('realtorControllers',[])
     };
     
     $ionicPlatform.registerBackButtonAction(function (event) {
-        if($state.current.name=='app.about' || $state.current.name=='app.contact' || $state.current.name=='app.likes' || $state.current.name=='app.login'){
-          navigator.app.exitApp();
-        }else if($state.current.name=='app.home.map' || $state.current.name=='app.home.result'){
-            navigator.app.exitApp();
-        }
-        else {
-          navigator.app.backHistory();
+        if($ionicHistory.currentStateName()=='app.about' || $ionicHistory.currentStateName()=='app.contact' || $ionicHistory.currentStateName()=='app.likes' || $state.current.name=='app.login'){
+          ionic.Platform.exitApp();
+        }else if($ionicHistory.currentStateName()=='app.home.map' || $ionicHistory.currentStateName()=='app.home.result'){
+            ionic.Platform.exitApp();
+        }else {
+          $ionicHistory.goBack();
         }
       }, 100);
 })
