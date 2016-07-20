@@ -180,7 +180,7 @@ XimaMap = function(id,idl,idbar,idpan,iddraw,idpoly,idclear,idmaxmin,idcircle){
 			},
 			
 			failure:function(response,options){
-				Ext.MessageBox.alert('Warning','ERROR');
+				//Ext.MessageBox.alert('Warning','ERROR');
 			},
 			success:function(response,options){
 				if(type=="COMP-MAP") storeComp.load({params:{start:0, limit:limitComp}});
@@ -637,14 +637,14 @@ XimaMap.prototype.centerMapCounty = function (id,press){
 		if(id!=-1){
 			
 			$.ajax({  
-				url: '/properties_averageCounty.php',
+				url: 'http://www.reifax.com/properties_averageCounty.php',
 				type: 'POST',
 				data:{ 
 					idcounty: id
 				},
 				
 				error:function(response){
-					alert('Warning','ERROR');
+					//alert('Warning','ERROR');
 				},
 				
 				success: function(response){
@@ -886,7 +886,7 @@ XimaMap.prototype.pinMouseOver=function (pin){
 function setFirstImage(pid,imgID,bdcounty){
 	//console.log(imgID);
 	$.ajax({  
-		url: '/properties_setFirstImage.php',
+		url: 'http://www.reifax.com/properties_setFirstImage.php',
 		type: 'POST',
 		data:{ 
 			pid: pid,
