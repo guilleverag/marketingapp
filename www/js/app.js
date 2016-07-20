@@ -64,7 +64,7 @@ var realtorApp = angular.module('realtorApp', ['ionic', 'ngCordova', 'realtorCon
     //apiUrl: 'http://52.10.82.93/rewards/api/v1/reward_api.php'
 })
 
-.config(function($stateProvider, $urlRouterProvider) {
+.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
 
   $stateProvider
     .state('app', {
@@ -143,4 +143,7 @@ var realtorApp = angular.module('realtorApp', ['ionic', 'ngCordova', 'realtorCon
     })
     
   $urlRouterProvider.otherwise("/app/home/map");
+  
+  var jsScrolling = (ionic.Platform.isAndroid() ) ? false : true;
+  $ionicConfigProvider.scrolling.jsScrolling(jsScrolling);
 });
