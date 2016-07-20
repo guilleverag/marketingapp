@@ -1,6 +1,6 @@
 var realtorControllers = angular.module('realtorControllers',[])
 
-.controller('ReiFaxCtrl', function($scope, $rootScope, $ionicSideMenuDelegate, $ionicModal) {
+.controller('ReiFaxCtrl', function($scope, $rootScope, $ionicSideMenuDelegate, $ionicModal, $ionicPlatform) {
     console.log('reifaxCtrl');
     
     $scope.toggleLeft = function() {
@@ -51,6 +51,15 @@ var realtorControllers = angular.module('realtorControllers',[])
         $rootScope.user.login = false;
         $rootScope.user.email = '';
     };
+    
+        if($state.current.name=='app.about' || $state.current.name=='app.contact' || $state.current.name=='app.likes' || $state.current.name=='app.login'){
+          navigator.app.exitApp();
+        }else if($state.current.name=='app.home.map' || $state.current.name=='app.home.result'){
+            navigator.app.exitApp();
+        }
+        else {
+          navigator.app.backHistory();
+        }
 })
 
 .controller('LoginCtrl', function($scope, $rootScope, $state, users, properties) {
