@@ -66091,7 +66091,7 @@ function($timeout, $ionicGesture, $window) {
 
         // add gesture handlers
         var gestureOpts = { stop_browser_behavior: false };
-        gestureOpts.prevent_default_directions = ['left', 'right'];
+        //gestureOpts.prevent_default_directions = ['left', 'right'];
         var contentTapGesture = $ionicGesture.on('tap', onContentTap, $element, gestureOpts);
         var dragRightGesture = $ionicGesture.on('dragright', onDragX, $element, gestureOpts);
         var dragLeftGesture = $ionicGesture.on('dragleft', onDragX, $element, gestureOpts);
