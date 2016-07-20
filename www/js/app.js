@@ -144,6 +144,6 @@ var realtorApp = angular.module('realtorApp', ['ionic', 'ngCordova', 'realtorCon
     
   $urlRouterProvider.otherwise("/app/home/map");
   
-  var jsScrolling = (ionic.Platform.isAndroid() ) ? false : true;
-  $ionicConfigProvider.scrolling.jsScrolling(jsScrolling);
+  /*var jsScrolling = (ionic.Platform.isAndroid() ) ? false : true;
+  $ionicConfigProvider.scrolling.jsScrolling(jsScrolling);*/
 });
