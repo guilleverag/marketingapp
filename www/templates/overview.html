@@ -14,7 +14,7 @@
     
     <ion-content class="has-header" data-tap-disabled='true' >
     
-        <ion-scroll ng-show="imageShow" direction="x" has-bouncing="false" style="height:{{imageH}}px; overflow-x:hidden;">
+        <ion-scroll ng-show="imageShow" direction="x" has-bouncing="true" style="height:{{imageH}}px; overflow-x:hidden;">
             <div class="item-image" collection-repeat="photo in overview.images" item-height="imageH" item-width="imageW">
                 <img ng-src="{{photo}}">
             </div>
