@@ -52,6 +52,7 @@ var realtorControllers = angular.module('realtorControllers',[])
         $rootScope.user.email = '';
     };
     
+    $ionicPlatform.registerBackButtonAction(function (event) {
         if($state.current.name=='app.about' || $state.current.name=='app.contact' || $state.current.name=='app.likes' || $state.current.name=='app.login'){
           navigator.app.exitApp();
         }else if($state.current.name=='app.home.map' || $state.current.name=='app.home.result'){
@@ -60,6 +61,7 @@ var realtorControllers = angular.module('realtorControllers',[])
         else {
           navigator.app.backHistory();
         }
+      }, 100);
 })
 
 .controller('LoginCtrl', function($scope, $rootScope, $state, users, properties) {
