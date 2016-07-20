@@ -1,0 +1,50 @@
+<ion-view view-title="Contact">
+    
+    <ion-nav-buttons side="right">    
+    </ion-nav-buttons>
+    
+    <ion-content class="padding">
+        <!--<div class="list card">
+        
+            <div class="item item-avatar big-avatar">
+                <img ng-src="http://www.reifax.com/{{$root.realtor.profimg}}">
+                <h2>{{$root.realtor.agent}}</h2>
+                <p><i class="icon ion-ios-telephone"></i> {{$root.realtor.agentph}}</p>
+                <p><i class="icon ion-ios-printer"></i> {{$root.realtor.agentfax}}</p>
+                <p><i class="icon ion-ios-email"></i> {{$root.realtor.agentemail}}</p>
+                <p>{{$root.realtor.address}}</p>
+                <br>
+                <h2>{{$root.realtor.officename}}</h2>
+                <p><i class="icon ion-ios-telephone"></i> {{$root.realtor.officephone}}</p>
+            </div>
+        
+        </div>-->
+        
+        <h1>Contact Form</h1>
+        <div class="list card">
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">First Name</span>
+                <input type="text" placeholder="John">
+            </label>
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Last Name</span>
+                <input type="text" placeholder="Doe">
+            </label>
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Phone</span>
+                <input type="tel" placeholder="">
+            </label>
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Email</span>
+                <input type="email" placeholder="john@mail.com">
+            </label>
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Comments</span>
+                <textarea placeholder="Comments"></textarea>
+            </label>
+        </div>
+        <button class="button button-block button-positive" ng-click="sendEmailContact()">
+            Submit
+        </button>
+    </ion-content>
+</ion-view>

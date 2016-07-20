@@ -1,0 +1,23 @@
+<ion-view view-title="About">
+    
+    <ion-nav-buttons side="right">  
+    </ion-nav-buttons>
+    
+    <ion-content class="padding">
+        <div class="list card">
+        
+            <div class="item item-avatar big-avatar">
+                <img ng-src="http://www.reifax.com/{{$root.realtor.profimg}}">
+                <h2>{{$root.realtor.agent}}</h2>
+                <p><i class="icon ion-ios-telephone"></i> {{$root.realtor.agentph}}</p>
+                <p><i class="icon ion-ios-printer"></i> {{$root.realtor.agentfax}}</p>
+                <p><i class="icon ion-ios-email"></i> {{$root.realtor.agentemail}}</p>
+                <p>{{$root.realtor.address}}</p>
+                <br>
+                <h2>{{$root.realtor.officename}}</h2>
+                <p><i class="icon ion-ios-telephone"></i> {{$root.realtor.officephone}}</p>
+            </div>
+        
+        </div>
+    </ion-content>
+</ion-view>

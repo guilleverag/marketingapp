@@ -1,0 +1,15 @@
+<ion-view view-title="Realtors App">        
+    <ion-footer-bar align-title="center" class="bar bar-footer bar-balanced">
+        <h1 class="title">{{resultPropertiesFound}}</h1>
+    </ion-footer-bar>
+    
+    <ion-tabs class="tabs-balanced tabs-top tabs-icon-only">
+        <ion-tab title="Map" icon="ion-location" href="#/app/home/map" on-select="onResultTabSelect('map')">
+            <ion-nav-view name="map-tab"></ion-nav-view>
+        </ion-tab>
+        
+        <ion-tab title="Result" icon="ion-grid" href="#/app/home/result" on-select="onResultTabSelect('result')">
+            <ion-nav-view name="result-tab"></ion-nav-view>
+        </ion-tab>
+    </ion-tabs>
+</ion-view>

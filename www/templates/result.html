@@ -1,0 +1,35 @@
+<ion-view view-title="Realtors App">    
+    <ion-content class="has-header has-footer">
+        <div class="list card" ng-repeat="property in $root.propertiesResult track by property.pid">
+            
+            <div class="item item-image">
+                <img ng-src="{{property.imagenxima}}">
+            </div>
+            
+            <div class="item resultProperty">
+                <div class="comparDistance">
+                    <div class="comparStatus" style="background-color:{{getColor(property.status,'Bg')}}; border-color:{{getColor(property.status,'Br')}}">{{$index + 1}}</div>
+                </div>
+                    
+                <h2>{{property.address}} {{property.unit}}</h2>
+                <h2>{{property.city}}, {{property.zip}}</h2>
+                <p>{{property.lprice | currency:undefined:0}} - {{property.xcoded}}</p>
+                <p>{{property.pin_bed}} bds - {{property.pin_bath}} ba - {{property.sqft}} sqft</p>
+            </div>
+            
+            <div class="item row actionProperty">
+                <div class="col">
+                    <a id="res_like_{{property.pid}}" class="button icon-left button-clear button-balanced" ng-click="like('{{property.pid}}','{{property.county}}')" ng-bind-html="isLike(property.pid,property.county)">
+                    </a>
+                </div>
+                <div class="col">
+                    <a class="button icon-left button-clear button-positive" ng-href="#/app/overview/{{property.county}}/{{property.pid}}">
+                        <i class="icon ion-home"></i>
+                        Overview
+                    </a>
+                </div>
+            </div>
+            
+        </div>                
+    </ion-content>
+</ion-view>

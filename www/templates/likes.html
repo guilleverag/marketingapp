@@ -1,0 +1,40 @@
+<ion-view view-title="Saved Properties">    
+    <ion-footer-bar align-title="center" class="bar bar-footer bar-balanced">
+        <h1 class="title">Saved Properties: {{$root.like.total}}</h1>
+    </ion-footer-bar>
+    
+    <ion-content class="has-header has-footer">
+        <div class="list card" ng-repeat="property in $root.like.properties">
+            
+            <div class="item item-image">
+                <img ng-src="{{property.imagenxima}}">
+            </div>
+            
+            <div class="item resultProperty">
+                <div class="comparDistance">
+                    <div class="comparStatus" style="background-color:{{getColor(property.status,'Bg')}}; border-color:{{getColor(property.status,'Br')}}">{{$index + 1}}</div>
+                </div>
+                    
+                <h2>{{property.address}} {{property.unit}}</h2>
+                <h2>{{property.city}}, {{property.zip}}</h2>
+                <p>{{property.lprice | currency:undefined:0}} - {{property.xcoded}}</p>
+                <p>{{property.beds}} bds - {{property.bath}} ba - {{property.sqft}} sqft</p>
+            </div>
+            
+            <div class="item row actionProperty">
+                <div class="col">
+                    <a id="res_like_{{property.pid}}" class="button icon-left button-clear button-assertive" ng-click="like('{{property.pid}}','{{property.county}}')">
+                        Delete
+                    </a>
+                </div>
+                <div class="col">
+                    <a class="button icon-left button-clear button-positive" ng-href="#/app/overview/{{property.county}}/{{property.pid}}">
+                        <i class="icon ion-home"></i>
+                        Overview
+                    </a>
+                </div>
+            </div>
+            
+        </div>                
+    </ion-content>
+</ion-view>

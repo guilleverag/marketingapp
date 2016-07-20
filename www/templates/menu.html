@@ -1,0 +1,37 @@
+<ion-side-menus enable-menu-with-back-views="false">
+        
+    <ion-side-menu-content drag-content="false">
+        <ion-nav-bar class="bar-balanced">
+            <!--<ion-nav-back-button>
+            </ion-nav-back-button>-->
+        
+            <ion-nav-buttons side="left">
+                <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+                </button>
+            </ion-nav-buttons>
+            
+            <ion-nav-buttons side="right">
+                <button ng-show="$root.tabState=='result'" class="button button-icon button-clear ion-shuffle" ng-click="showResultOrder($event)">
+                </button>
+                <button class="button button-icon button-clear ion-search" ng-click="showSearch()">
+                </button>
+            </ion-nav-buttons>
+        </ion-nav-bar>
+        
+        <ion-nav-view name="menuContent"></ion-nav-view>
+    </ion-side-menu-content> 
+
+    <ion-side-menu side="left">
+        <ion-content>
+            <ul class="list">
+                <h4 class="padding" ng-show="$root.user.login">{{$root.user.email}}</h4>
+                <a ui-sref="app.home.map" class="item" menu-close>Search</a>
+                <a ng-show="$root.user.login" ui-sref="app.likes" class="item" menu-close>Saved Properties</a>
+                <a ui-sref="app.about" class="item" menu-close>About</a>
+                <a ui-sref="app.contact" class="item" menu-close>Contact</a>
+                <a ng-hide="$root.user.login" ui-sref="app.login" class="item" menu-close>Login / Register</a>
+                <a ng-show="$root.user.login" class="item" menu-close ng-click="logout()">Logout</a>
+            </ul>
+        </ion-content>
+    </ion-side-menu>
+</ion-side-menus>

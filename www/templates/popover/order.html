@@ -1,0 +1,15 @@
+<ion-modal-view>
+    <ion-header-bar class="bar-balanced">
+        <h1 class = "title">Order By</h1>
+    </ion-header-bar>
+
+    <ion-content ng-controller="HomeResultCtrl">
+        <div class="list list-inset">
+
+            <div class="item" ng-repeat="order in $root.orderComboResult" ng-click="orderSearch('{{order.id}}')">
+                {{order.name}}
+            </div>
+
+        </div>
+    </ion-content>
+</ion-modal-view>

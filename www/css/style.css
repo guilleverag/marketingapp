@@ -1,0 +1,179 @@
+body {
+  cursor: url('http://ionicframework.com/img/finger.png'), auto;
+  font-family: "Open Sans",open-sans,Arial,"Helvetica Neue",sans-serif;
+  word-spacing: normal;
+  letter-spacing: normal;
+  color:#333;
+}
+
+.scroll {
+    height: 100%;
+}
+ 
+#containerMapPrincipal {
+    width: 100%;
+    height: 100%;
+}
+
+.propertyDetail h1{
+    font-size: 25px;
+    line-height: 1.3;
+    font-weight: 300;
+    display: block;
+}
+
+.propertyDetail h1 span{
+    font-size: 20px;
+    line-height: 1.3;
+    font-weight: 300;
+    display: block;
+}
+
+.propertyDetail .propertyPrice{
+    font-size: 12px;
+    line-height: 1;
+    font-weight: bold;
+    text-transform:uppercase;
+    vertical-align:middle;
+}
+
+.propertyDetail .propertyPrice div{
+    line-height: 1;
+    text-transform:uppercase;
+    vertical-align:middle;
+    font-size: 20px;
+    font-weight: normal;
+    display:inline;
+}
+
+.propertyDetail h3{
+    font-weight: normal;
+    display: block;
+    color:#999;
+    margin-top: 10px;
+}
+
+.propertyDetail p{
+    font-weight: 300;
+    display: block;
+    color:#333;
+    font-size: 15px;
+    word-spacing: 0px;
+}
+
+.propertyInfo {
+  margin-top: 2px;
+  margin-bottom: 0px;
+  padding: 1px 10px;
+}
+
+.propertyInfo div {
+  font-size: 14px;
+  white-space: normal;
+  padding: 1px 10px;
+}
+
+.propertyInfo span {
+  color: #888;
+  display: inline-block;
+  text-transform: uppercase;
+  width: 120px;
+}
+
+.comparDistance {
+  float: left;
+  height: 60px;
+  vertical-align: middle;
+  width: 80px;
+}
+
+.comparStatus {
+  background-color: #d2555d;
+  border: 5px solid #ce4dc3;
+  border-radius: 50px;
+  display: block;
+  font-size: 30px;
+  height: 50px;
+  margin: 5px auto;
+  padding: 10px 0;
+  text-align: center;
+  width: 50px;
+}
+
+.resultProperty {
+    padding: 10px 0;
+}
+.resultProperty .comparDistance {
+  float: left;
+  height: 80px;
+  vertical-align: middle;
+  width: 80px;
+}
+
+.resultProperty .comparStatus {
+  background-color: #d2555d;
+  border: 5px solid #ce4dc3;
+  border-radius: 50px;
+  display: block;
+  font-size: 30px;
+  height: 50px;
+  margin: 15px auto;
+  padding: 10px 0;
+  text-align: center;
+  width: 50px;
+}
+
+.comparList {
+  padding: 5px;
+}
+
+.actionProperty {
+  background-color: #eee;
+}
+
+.big-avatar{
+    padding-left:150px;
+}
+.big-avatar > img:first-child {
+  max-height: 120px;
+  max-width: 120px;
+  top: 25px;
+}
+
+.customLabeldiv {
+    background: #f7f7f7 none repeat scroll 0 0;
+    border-radius: 5px;
+    box-shadow: 0 1px 2px #bbb;
+    font-size: 12px;
+    margin-top: 14px;
+    padding: 2px;
+}
+.arrow_box {
+    background: #ffffff none repeat scroll 0 0;
+    border-radius: 3px;
+    box-shadow: 0 10px 6px -6px #777;
+    padding: 0;
+    position: relative;
+}
+.arrow_box h5 {
+  background: #5eab1f none repeat scroll 0 0;
+  color: #fff;
+  font-size: 15px;
+  margin: 0 0 2px;
+  overflow: hidden;
+  padding: 0;
+  text-align: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.arrow_box p {
+    font-size: 13px;
+    margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.arrow_box a {
+    color: #5eab1f;
+    font-weight: bold;
+}

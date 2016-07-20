@@ -1,0 +1,131 @@
+<ion-modal-view>
+    <ion-header-bar class="bar-balanced">
+        <h1 class = "title">Search</h1>
+    </ion-header-bar>
+	
+    <ion-content ng-controller="HomeCtrl">
+        <div class="list padding-horizontal">
+            <br>
+            
+            <div class="item item-divider"> 
+                Search Type
+            </div>
+            
+            <ion-radio ng-model="searchParams.search_type" ng-value="'FS'" class="radio-positive">For Sale</ion-radio>
+            <ion-radio ng-model="searchParams.search_type" ng-value="'FR'" class="radio-positive">For Rent</ion-radio>
+            
+            <br>
+            
+            <label class="item item-input">
+                <i class="icon ion-search placeholder-icon"></i>
+                <input type="text" ng-model="searchParams.search" placeholder="Address, City or Zip">
+            </label>
+            
+            <br>
+                        
+            <label class="item item-input item-select">
+                <div class="input-label">
+                    County
+                </div>
+                <select ng-model="searchParams.county">
+                    <option value="1">Broward</option>
+                    <option value="2">Dade</option>
+                </select>
+            </label>
+            
+            <label class="item item-input item-select">
+                <div class="input-label">
+                    Property Type
+                </div>
+                <select ng-model="searchParams.proptype">
+                    <option value="">Any</option>
+                    <option value="01">Single Family</option>
+                    <option value="04">Condo/Town/Villa</option>
+                </select>
+            </label>
+            
+            <label class="item item-input item-select">
+                <div class="input-label">
+                    Sqft
+                </div>
+                <select ng-model="searchParams.sqft">
+                    <option value=-1>Any</option>
+                    <option value="250">250+</option>
+                    <option value="500">500+</option>
+                    <option value="1000">1000+</option>
+                    <option value="1250">1250+</option>
+                    <option value="1500">1500+</option>
+                    <option value="1750">1750+</option>
+                    <option value="2000">2000+</option>
+                    <option value="2250">2250+</option>
+                    <option value="2500">2500+</option>
+                    <option value="2750">2750+</option>
+                    <option value="3000">3000+</option>
+                    <option value="3250">3250+</option>
+                    <option value="3500">3500+</option>
+                    <option value="3750">3750+</option>
+                    <option value="4000">4000+</option>
+                    <option value="5000">5000+</option>
+                    <option value="10000">10000+</option>
+                </select>
+            </label>
+            
+            <label class="item item-input item-select">
+                <div class="input-label">
+                    Price
+                </div>
+                <select ng-model="searchParams.price_low">
+                    <option value="">Any</option>
+                    <option value="50000">$50,000+</option>
+                    <option value="100000">$100,000+</option>
+                    <option value="150000">$150,000+</option>
+                    <option value="200000">$200,000+</option>
+                    <option value="250000">$250,000+</option>
+                    <option value="300000">$300,000+</option>
+                    <option value="350000">$350,000+</option>
+                    <option value="400000">$400,000+</option>
+                    <option value="450000">$450,000+</option>
+                    <option value="500000">$500,000+</option>
+                    <option value="600000">$600,000+</option>
+                    <option value="700000">$700,000+</option>
+                    <option value="800000">$800,000+</option>
+                    <option value="900000">$900,000+</option>
+                    <option value="1000000">$1,000,000+</option>
+                </select>
+            </label>
+            
+            <label class="item item-input item-select">
+                <div class="input-label">
+                    Beds
+                </div>
+                <select ng-model="searchParams.bed">
+                    <option value=-1>Any</option>
+                    <option value=1>1+</option>
+                    <option value=2>2+</option>
+                    <option value=3>3+</option>
+                    <option value=4>4+</option>
+                    <option value=5>5+</option>
+                </select>
+            </label>
+            
+            <label class="item item-input item-select">
+                <div class="input-label">
+                    Baths
+                </div>
+                <select ng-model="searchParams.bath">
+                    <option value=-1>Any</option>
+                    <option value=1>1+</option>
+                    <option value=2>2+</option>
+                    <option value=3>3+</option>
+                    <option value=4>4+</option>
+                    <option value=5>5+</option>
+                </select>
+            </label>
+            
+            <button class = "button button-block button-positive"
+            ng-click = "closeSearch()">Search</button>
+            <button class = "button button-block button-assertive"
+            ng-click = "modal.hide()">Cancel</button>
+        </div>
+    </ion-content>
+</ion-modal-view>

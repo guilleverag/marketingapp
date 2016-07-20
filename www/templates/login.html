@@ -1,0 +1,26 @@
+<ion-view view-title="Login">
+    
+    <ion-nav-buttons side="right">  
+    </ion-nav-buttons>
+    
+    <ion-content class="padding">
+        <form name="loginForm" ng-controller="LoginCtrl" ng-submit="login()">
+            <h1>Sign in or Register</h1>
+            <div class="list card">
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Email</span>
+                    <input name="email" ng-model="email" required type="email" placeholder="john@mail.com">
+                </label>
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Password</span>
+                    <input name="pass" ng-model="pass" required type="password" placeholder="">
+                </label>
+            </div>
+    
+            <input type="submit" class = "button button-block button-positive" value="Login">
+            <a ng-href="#/app/home/map" class="button button-block button-assertive">
+                Close
+            </a>
+        </form>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,184 @@
+<ion-view view-title="">    
+    <ion-nav-buttons side="right">
+        <button id="like_property_overview" class="button button-clear" ng-click="like()">
+            <i class="icon ion-ios-heart-outline"></i>
+        </button>
+        
+    </ion-nav-buttons>
+    
+    <ion-nav-buttons side="left">
+        <button class="button button-clear" ng-click="myGoBack()" >
+        <i class="icon ion-ios-arrow-back"></i>
+        {{overview.property.address}}</button>
+    </ion-nav-buttons>
+    
+    <ion-content class="has-header">
+    
+        <ion-scroll ng-show="imageShow" direction="x" has-bouncing="false" style="height:{{imageH}}px; overflow-x:hidden;">
+            <div class="item-image" collection-repeat="photo in overview.images" item-height="imageH" item-width="imageW">
+                <img ng-src="{{photo}}">
+            </div>
+        </ion-scroll>
+
+        <div class="propertyDetail padding">
+            <h1>{{overview.property.address}}, <span>{{overview.property.city}}, {{overview.property.state}} {{overview.property.zip}}</span></h1>
+                        
+            <div class="propertyPrice assertive">
+                {{overview.property.listingType}}
+                <div class="dark">{{overview.listing.lprice | currency:undefined:0}}</div>
+            </div>
+            
+            <h3>{{overview.property.beds}} beds - {{overview.property.bath}} baths - {{overview.property.sqft | number:0}} sqft</h3>
+            
+            <p>{{overview.property.xcoded}}, Built in {{overview.property.yrbuilt}}</p>
+            <p>{{overview.property.dom}} Days on REIFax</p>
+        </div>
+        
+        <div class="card padding">
+            <h1>Listing Detail</h1>
+            
+            <div class="list propertyInfo">
+                <div class="item">
+                    <span>Listing #</span> {{overview.listing.mlnumber}}
+                </div>
+                <div class="item">
+                    <span>Folio #</span> {{overview.listing.parcelid}}
+                </div>
+                <div class="item">
+                    <span>Status</span> {{overview.listing.status}}
+                </div>
+                <div class="item">
+                    <span>Listing Price</span> {{overview.listing.lprice | currency:undefined:0}}
+                </div>
+                <div class="item">
+                    <span>Listing Entry Date</span> {{getDateFormat(overview.listing.entrydate) | date:"mediumDate"}}
+                </div>
+                <div class="item">
+                    <span>Listing Date</span> {{getDateFormat(overview.listing.ldate) | date:"mediumDate"}}
+                </div>
+                <div class="item">
+                    <span>Construction Type</span> {{overview.listing.constype}}
+                </div>
+                <div class="item">
+                    <span>Living Area</span> {{overview.listing.apxtotsqft}}
+                </div>
+                <div class="item">
+                    <span>Remark</span> {{overview.listing.remark1}}
+                </div>
+                <div class="item">
+                    <span>Financial</span> {{overview.listing.financial}}
+                </div>
+            </div>
+        </div>
+        
+        <div class="card padding">
+            <h1>Public Info</h1>
+            
+            <div class="list propertyInfo">
+                <div class="item">
+                    <span>Subdivision Name</span> {{overview.psummary.sdname}}
+                </div>
+                <div class="item">
+                    <span>Folio #</span> {{overview.psummary.folio}}
+                </div>
+                <div class="item">
+                    <span>Last Sale</span> {{getDateFormat(overview.psummary.saledate)  | date:"mediumDate"}}
+                </div>
+                <div class="item">
+                    <span>Last Sold Price</span> {{overview.psummary.saleprice | currency:undefined:0}}
+                </div>
+                <div class="item">
+                    <span>A. C.</span> {{overview.psummary.ac}}
+                </div>
+                <div class="item">
+                    <span># of Stories</span> {{overview.psummary.stories}}
+                </div>
+                <div class="item">
+                    <span>Lot Size</span> {{overview.psummary.tsqft}}
+                </div>
+                <div class="item">
+                    <span>Livig Area</span> {{overview.psummary.lsqft}}
+                </div>
+                <div class="item">
+                    <span>Gross Area</span> {{overview.psummary.bheated}}
+                </div>
+                <div class="item">
+                    <span>Pool</span> {{overview.psummary.pool}}
+                </div>
+                <div class="item">
+                    <span>Waterfront</span> {{overview.psummary.waterf}}
+                </div>
+                <div class="item">
+                    <span># of Units</span> {{overview.psummary.units}}
+                </div>
+                <div class="item">
+                    <span>Build Value</span> {{overview.psummary.buildingv | currency:undefined:0}}
+                </div>
+                <div class="item">
+                    <span>$/Sqft</span> {{overview.psummary.sfp | currency:undefined:0}}
+                </div>
+                <div class="item">
+                    <span>Land Value</span> {{overview.psummary.landv | currency:undefined:0}}
+                </div>
+                <div class="item">
+                    <span>Taxable Value</span> {{overview.psummary.taxablev | currency:undefined:0}}
+                </div>
+                <div class="item">
+                    <span>Legal Description</span> {{overview.psummary.legal}}
+                </div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <h1 class="padding">Comparables</h1>
+            
+            <div class="list" ng-repeat="cp in compData">               
+                <div class="item comparList">
+                    <div class="comparDistance">
+                        <div class="comparStatus" style="background-color:{{getColor(cp.status,'Bg')}}; border-color:{{getColor(cp.status,'Br')}}">{{getIndex(cp.status)}}</div>
+                    </div>
+                    
+                    <h2>{{cp.address}}, {{cp.Distance}} miles away</h2>
+                    <p>{{cp.saleprice | currency:undefined:0}} - Closing at {{getDateFormat(cp.closingdt) | date:"mediumDate"}}</p>
+                    <p>{{cp.beds}} bds - {{cp.bath}} ba - {{cp.lsqft}} sqft - Built in {{cp.yrbuilt}}</p>
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="card">
+            <h1 class="padding">Similar for Sale</h1>
+
+            <div class="list" ng-repeat="cp in compActData">               
+                <div class="item comparList">
+                    <div class="comparDistance">
+                        <div class="comparStatus" style="background-color:{{getColor(cp.status,'Bg')}}; border-color:{{getColor(cp.status,'Br')}}">{{getIndex(cp.status)}}</div>
+                    </div>
+                    
+                    <h2>{{cp.address}}, {{cp.Distance}} miles away</h2>
+                    <p>{{cp.lprice | currency:undefined:0}} - Listing at {{getDateFormat(cp.ldate) | date:"mediumDate"}}</p>
+                    <p>{{cp.beds}} bds - {{cp.bath}} ba - {{cp.lsqft}} sqft - Built in {{cp.yrbuilt}}</p>
+                </div>
+                
+            </div>
+        </div>
+        
+        <div class="card">
+            <h1 class="padding">Similar for Rent</h1>
+
+            <div class="list" ng-repeat="cp in compRenData">               
+                <div class="item comparList">
+                    <div class="comparDistance">
+                        <div class="comparStatus" style="background-color:{{getColor(cp.status,'Bg')}}; border-color:{{getColor(cp.status,'Br')}}">{{getIndex(cp.status)}}</div>
+                    </div>
+                    
+                    <h2>{{cp.address}}, {{cp.Distance}} miles away</h2>
+                    <p>Rent Value {{cp.lprice | currency:undefined:0}}</p>
+                    <p>{{cp.beds}} bds - {{cp.bath}} ba - {{cp.lsqft}} sqft - Built in {{cp.yrbuilt}}</p>
+                </div>
+                
+            </div>
+        </div>
+    </ion-content>
+</ion-view>
